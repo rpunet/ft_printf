@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 21:06:05 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/05 18:00:13 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/06 02:53:00 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf(char *format, ...)
 
 	if (!(s = malloc(sizeof (t_struct))))
 		return (-1);
-	struct_init(s);
+	ft_struct_init(s);
 
 	//int		pos;
 	//int		ret;
@@ -43,9 +43,9 @@ int	ft_printf(char *format, ...)
 			{
 
 				ft_check_flags(s, ap, format);
-				if (s->err == 0)
+				if (!s->err)
 					ft_tracker(s, ap, format);
-
+				ft_struct_zero(s);
 			}
 			else
 				return (-1);

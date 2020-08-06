@@ -73,10 +73,16 @@ int		main(void)
 // rp = printf("%0*c\n", 5, 66);
 // printf("%d\n", rp);
 
-res = ft_printf("%3.4s\n" , NULL);
+// res = ft_printf("%-3.8s", NULL);
+// printf("%d\n", res);
+
+// rp = printf("%-3.8s", NULL);
+// printf("%d\n", rp);
+
+res = ft_printf("%3.3s%3.3s", "hello", "world");
 printf("%d\n", res);
 
-rp = printf("%3.6s\n" , NULL );
+rp = printf("%3.3s%3.3s", "hello", "world");
 printf("%d\n", rp);
 
 
