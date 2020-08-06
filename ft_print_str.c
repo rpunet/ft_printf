@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/06 04:31:36 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/06 04:31:49 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/06 04:57:31 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	str_convert(t_struct *s, va_list ap)
 	int		slen;
 
 	str = (char *)va_arg(ap, char*);
-	if (str == NULL)
+	if (str == NULL || str == 0)
 		str = "(null)";
 	slen = (int)ft_strlen(str);
 	if (s->neg == 0)

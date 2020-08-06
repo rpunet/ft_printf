@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 22:48:54 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/05 19:30:21 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/06 05:22:00 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	ft_precision(t_struct *s, char *format, va_list ap)
 			if (s->starp != 0)
 				s->err = 1;
 			s->precision = va_arg(ap, int);
+			if (s->precision < 0)
+				s->dot = 0;
 			s->pos++;
 		}
 	}
