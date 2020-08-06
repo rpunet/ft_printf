@@ -6,7 +6,7 @@
 #    By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/16 18:07:10 by rpunet            #+#    #+#              #
-#    Updated: 2020/08/06 03:02:56 by rpunet           ###   ########.fr        #
+#    Updated: 2020/08/06 04:32:57 by rpunet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= libftprintf.a
 LIBFT	= libft.a
 CFLAGS	= -Wall -Wextra -Werror
 CC		= gcc
-SRCS	= ft_printf.c ft_tracker.c flags.c ft_print_int.c ft_print_char.c converters.c ft_printf_utils.c
+SRCS	= ft_printf.c ft_tracker.c flags.c ft_print_int.c ft_print_char.c ft_print_str.c ft_printf_utils.c
 OBJS	= $(SRCS:.c=.o)
 
 all: $(NAME)

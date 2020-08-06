@@ -6,13 +6,13 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 20:19:05 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/05 19:30:25 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/06 04:24:42 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_left_aligned(t_struct *s, char *str, int slen)
+void	ft_left_aligned_int(t_struct *s, char *str, int slen)
 {
 	int	iprecision;
 
@@ -50,7 +50,7 @@ void	ft_aux_zeros(t_struct *s, char *str, int slen)
 	}
 }
 
-void	ft_right_aligned(t_struct *s, int slen)
+void	ft_right_aligned_int(t_struct *s, int slen)
 {
 	int	iprecision;
 	int minus;
@@ -96,10 +96,10 @@ void	int_convert(t_struct *s, va_list ap)
 	if (s->dot == 1)
 		s->zero = 0;
 	if (s->neg == 1)
-		ft_left_aligned(s, str, slen);
+		ft_left_aligned_int(s, str, slen);
 	if (s->neg == 0)
 	{
-		ft_right_aligned(s, slen);
+		ft_right_aligned_int(s, slen);
 		ft_aux_zeros(s, str, slen);
 	}
 	free(str);

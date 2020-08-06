@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 12:32:20 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/06 02:52:38 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/06 04:30:57 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	ft_tracker(t_struct *flags, va_list ap, char *format);
 void	char_convert(t_struct *s, va_list ap);
 void	int_convert(t_struct *s, va_list ap);
 void	str_convert(t_struct *s, va_list ap);
+void	ft_right_aligned_s(t_struct *s, int slen);
+void	ft_left_aligned_s(t_struct *s, int slen);
 void	ft_check_flags(t_struct *s, va_list ap, char *format);
 void	ft_flags(t_struct *s, char *format);
 void	ft_width(t_struct *s, char *format, va_list ap);
@@ -51,8 +53,8 @@ void	ft_precision(t_struct *s, char *format, va_list ap);
 void	ft_check_flags(t_struct *s, va_list ap, char *format);
 void	ft_struct_init(t_struct *s);
 void	ft_struct_zero(t_struct *s);
-void	ft_left_aligned(t_struct *s, char *str, int slen);
-void	ft_right_aligned(t_struct *s, int slen);
+void	ft_left_aligned_int(t_struct *s, char *str, int slen);
+void	ft_right_aligned_int(t_struct *s, int slen);
 void	ft_aux_zeros(t_struct *s, char *str, int slen);
 
 
