@@ -8,6 +8,8 @@ int		main(void)
 {
 	int		res;
 	int		rp;
+
+
 	//printf("hola, %s el numero %d\n", "yo soy", 3);
 	// if (!(res = ft_printf("soy %d, y  %d, %s, %d  %d\n", 523451, 36, "aquitepillo\n", 4, 34)))
 	// 	printf("error de especificador\n");
@@ -65,10 +67,16 @@ int		main(void)
 
 
 
-res = ft_printf("%0*c\n", 5,66);
+// res = ft_printf("%0*c\n", 5,66);
+// printf("%d\n", res);
+
+// rp = printf("%0*c\n", 5, 66);
+// printf("%d\n", rp);
+
+res = ft_printf("%3.4s\n" , NULL);
 printf("%d\n", res);
 
-rp = printf("%0*c\n", 5, 66);
+rp = printf("%3.6s\n" , NULL );
 printf("%d\n", rp);
 
 

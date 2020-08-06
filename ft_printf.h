@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 12:32:20 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/05 02:32:07 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/06 01:23:23 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int		ft_printf(char *format, ...) ;//__attribute__ ((format (printf,1,2)));
 void	ft_tracker(t_struct *flags, va_list ap, char *format);
 void	char_convert(t_struct *s, va_list ap);
 void	int_convert(t_struct *s, va_list ap);
+void	str_convert(t_struct *s, va_list ap);
 void	ft_check_flags(t_struct *s, va_list ap, char *format);
 void	ft_flags(t_struct *s, char *format);
 void	ft_width(t_struct *s, char *format, va_list ap);

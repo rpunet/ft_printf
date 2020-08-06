@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 17:08:43 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/05 19:58:28 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/06 01:39:18 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	ft_tracker(t_struct *s, va_list ap, char *format)
 {
-	char	*str;
 
-	if (format[s->pos] == 'c' )
+
+	if (format[s->pos] == 'c' && s->zero == 0)
 		char_convert(s, ap);
 
 
 	else if (format[s->pos] == 'd' || format[s->pos] == 'i')
 		int_convert(s, ap);
-	else if (format[s->pos] == 's')
+
+	else if (format[s->pos] == 's' && s->zero == 0)
 	{
-		str = va_arg(ap, char*);
-		ft_putstr_fd(str, 1);
-		s->ret += ft_strlen(str);
+		str_convert(s, ap);
+
 
 	}
 	else
