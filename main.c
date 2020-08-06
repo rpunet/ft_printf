@@ -79,10 +79,10 @@ int		main(void)
 // rp = printf("%-3.8s", NULL);
 // printf("%d\n", rp);
 
-res = ft_printf("%3.3s%3.3s", "hello", "world");
+res = ft_printf("%3.7s%3.3s", "hello", "world");
 printf("%d\n", res);
 
-rp = printf("%3.3s%3.3s", "hello", "world");
+rp = printf("%3.7s%3.3s", "hello", "world");
 printf("%d\n", rp);
 
 
