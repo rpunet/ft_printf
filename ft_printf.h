@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 12:32:20 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/10 18:52:46 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 00:21:07 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct		s_struct
 	//int stop;
 }					t_struct;
 
-int		ft_printf(char *format, ...) ;//__attribute__ ((format (printf,1,2)));
+int		ft_printf(char *format, ...) __attribute__ ((format (printf,1,2)));
 void	ft_tracker(t_struct *flags, va_list ap, char *format);
 void	char_convert(t_struct *s, va_list ap);
 void	int_convert(t_struct *s, va_list ap);

@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 21:40:59 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/10 19:58:43 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 01:26:47 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	left_aligned_ptr(t_struct *s, char *str, int plen)
 	s->ret += write(1, "0x", 2);
 	while (s->precision-- > plen)
 		s->ret += write(1, "0", 1);
-	s->ret += write(1, str, plen);
+	if (!(*str == 48 && plen == 1 && pprecision == 0))
+		s->ret += write(1, str, plen);
 	if (pprecision >= plen)
 	{
 		while (s->width-- > (plen + 2 + (pprecision - plen)))
@@ -35,6 +36,9 @@ void	left_aligned_ptr(t_struct *s, char *str, int plen)
 
 void	right_aligned_ptr(t_struct *s, char *str, int plen)
 {
+	int pprecision;
+
+	pprecision = s->precision;
 	if (s->precision >= plen)
 	{
 		while (s->width-- > (s->precision + 2))
@@ -53,14 +57,14 @@ void	right_aligned_ptr(t_struct *s, char *str, int plen)
 	s->ret += write(1, "0x", 2);
 	while (s->precision-- > plen)
 		s->ret += write(1, "0", 1);
-	s->ret += write(1, str, plen);
+	if (!(*str == 48 && plen == 1 && pprecision == 0))
+		s->ret += write(1, str, plen);
 }
 
 void	ptr_convert(t_struct *s, va_list ap)
 {
 	char		*ptr;
 	char		*str;
-	char		*aux;
 	int			plen;
 
 	ptr = va_arg(ap, char *);
@@ -73,10 +77,7 @@ void	ptr_convert(t_struct *s, va_list ap)
 	else
 		right_aligned_ptr(s, str, plen);
 
-
-	aux = str;
-
-	free (aux);
+	free (str);
 
 
 

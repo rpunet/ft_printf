@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 21:06:05 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/10 10:59:25 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 00:37:10 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_printf(char *format, ...)
 				ft_check_flags(s, ap, format);
 				if (!s->err)
 					ft_tracker(s, ap, format);
-				ft_struct_zero(s);
+ 				ft_struct_zero(s);
 			}
 			else
 				return (-1);
