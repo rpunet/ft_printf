@@ -8,6 +8,7 @@ int		main(void)
 {
 	int		res;
 	int		rp;
+	char	*s = "hola";
 
 
 	//printf("hola, %s el numero %d\n", "yo soy", 3);
@@ -79,11 +80,19 @@ int		main(void)
 // rp = printf("%-3.8s", NULL);
 // printf("%d\n", rp);
 
-res = ft_printf("%09s", "hi low\0don't print me lol\0");
+// res = ft_printf("%09s", "hi low\0don't print me lol\0");
+// printf("%d\n", res);
+
+// rp = printf("%09s", "hi low\0don't print me lol\0");
+// printf("%d\n", rp);
+
+res = ft_printf("%013p\n", NULL);
 printf("%d\n", res);
 
-rp = printf("%09s", "hi low\0don't print me lol\0");
+rp = printf("%013p\n",NULL);
 printf("%d\n", rp);
+
+
 
 
 	return (0);

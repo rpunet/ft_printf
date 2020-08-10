@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 22:14:13 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/06 02:52:28 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/10 17:02:45 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,27 @@ void	ft_struct_zero(t_struct *s)
 	s->star = 0;
 	s->starp = 0;
 	s->sign = 0;
+}
+
+char	*ft_itoa_base(unsigned long nbr, char *base)
+{
+	char			*str;
+	int				bslen;
+	unsigned long	nbrcopy;
+	int				i;
+
+	nbrcopy = nbr;
+	i = 1;
+	bslen = (int)ft_strlen(base);
+	while ((nbrcopy /= bslen) >= 1)
+		i++;
+	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	str[i] = '\0';
+	while (i-- > 0)
+	{
+		str[i] = base[nbr % bslen];
+		nbr /= bslen;
+	}
+	return (str);
 }

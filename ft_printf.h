@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 12:32:20 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/06 04:30:57 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/10 18:52:46 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,14 @@ int		ft_printf(char *format, ...) ;//__attribute__ ((format (printf,1,2)));
 void	ft_tracker(t_struct *flags, va_list ap, char *format);
 void	char_convert(t_struct *s, va_list ap);
 void	int_convert(t_struct *s, va_list ap);
+void	ft_left_aligned_int(t_struct *s, char *str, int slen);
+void	ft_right_aligned_int(t_struct *s, int slen);
+void	ft_aux_zeros(t_struct *s, char *str, int slen);
 void	str_convert(t_struct *s, va_list ap);
 void	ft_right_aligned_s(t_struct *s, int slen);
 void	ft_left_aligned_s(t_struct *s, int slen);
+void	ptr_convert(t_struct *s, va_list ap);
+void	left_aligned_ptr(t_struct *s, char *str, int plen);
 void	ft_check_flags(t_struct *s, va_list ap, char *format);
 void	ft_flags(t_struct *s, char *format);
 void	ft_width(t_struct *s, char *format, va_list ap);
@@ -53,9 +58,7 @@ void	ft_precision(t_struct *s, char *format, va_list ap);
 void	ft_check_flags(t_struct *s, va_list ap, char *format);
 void	ft_struct_init(t_struct *s);
 void	ft_struct_zero(t_struct *s);
-void	ft_left_aligned_int(t_struct *s, char *str, int slen);
-void	ft_right_aligned_int(t_struct *s, int slen);
-void	ft_aux_zeros(t_struct *s, char *str, int slen);
+char*	ft_itoa_base(unsigned long nbr, char *base);
 
 
 #endif
