@@ -9,7 +9,7 @@ int		main(void)
 {
 	int		res;
 	int		rp;
-	char	*s = "hola";
+	//char	*s = "hola";
 
 
 	//printf("hola, %s el numero %d\n", "yo soy", 3);
@@ -125,10 +125,32 @@ int		main(void)
 // printf("%d\n", rp);
 
 
-res = ft_printf("%%-d 42 == %-d ", INT_MIN);
+// res = ft_printf("%%-d 42 == %-d ", INT_MIN);
+// printf("%d\n", res);
+// rp = printf("%%-d 42 == %-d " , INT_MIN);
+// printf("%d\n", rp);
+
+
+// res = ft_printf("%07u\n", 1234);
+// printf("%d\n", res);
+// rp = printf("%07u\n", 1234);
+// printf("%d\n", rp);
+
+
+// res = ft_printf("this %u number", 17);
+// printf("%d\n", res);
+// rp = printf("this %u number", 17);
+// printf("%d\n", rp);
+
+
+res = ft_printf("%07X\n", 1234);
 printf("%d\n", res);
-rp = printf("%%-d 42 == %-d " , INT_MIN);
+rp = printf("%07X\n", 1234);
 printf("%d\n", rp);
+
+
+
+
 
 	return (0);
 }
