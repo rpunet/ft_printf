@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 21:40:59 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/11 02:12:20 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 02:30:28 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	ptr_convert(t_struct *s, va_list ap)
 		plen = 0;
 	else
 		plen = (int)ft_strlen(str);
+	if (s->precision < 0)
+		s->precision = 0;
 	if (s->dot == 1)
 		s->zero = 0;
 	if (s->neg == 1)
