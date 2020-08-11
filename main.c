@@ -69,11 +69,11 @@ int		main(void)
 
 
 
-// res = ft_printf("%0*c\n", 5,66);
-// printf("%d\n", res);
+res = ft_printf("%0*c\n", 5,66);
+printf("%d\n", res);
 
-// rp = printf("%0*c\n", 5, 66);
-// printf("%d\n", rp);
+rp = printf("%0*c\n", 5, 66);
+printf("%d\n", rp);
 
 // res = ft_printf("%-3.8s", NULL);
 // printf("%d\n", res);
@@ -81,11 +81,11 @@ int		main(void)
 // rp = printf("%-3.8s", NULL);
 // printf("%d\n", rp);
 
-res = ft_printf("%09s", "hi low\0don't print me lol\0");
-printf("%d\n", res);
+// res = ft_printf("%09s", "hi low\0don't print me lol\0");
+// printf("%d\n", res);
 
-rp = printf("%09s", "hi low\0don't print me lol\0");
-printf("%d\n", rp);
+// rp = printf("%09s", "hi low\0don't print me lol\0");
+// printf("%d\n", rp);
 
 // res = ft_printf("resultado ft_printf:%.*p\n", -1,NULL);
 // printf("%d\n", res);
@@ -105,30 +105,30 @@ printf("%d\n", rp);
 // printf("%d\n", rp);
 
 
-// res = ft_printf("%-07c\n", 'k');
-// printf("%d\n", res);
-// rp = printf("%-07c\n", 'k');
-// printf("%d\n", rp);
+res = ft_printf("%-07c\n", 'k');
+printf("%d\n", res);
+rp = printf("%-07c\n", 'k');
+printf("%d\n", rp);
 
 
-// res = ft_printf("%07c\n", 'k');
-// printf("%d\n", res);
-// rp = printf("%07c\n", 'k');
-// printf("%d\n", rp);
+res = ft_printf("%07c\n", 'k');
+printf("%d\n", res);
+rp = printf("%07c\n", 'k');
+printf("%d\n", rp);
 
 
 
 
-// res = ft_printf("%7c\n", 'k');
-// printf("%d\n", res);
-// rp = printf("%7c\n", 'k');
-// printf("%d\n", rp);
+res = ft_printf("%7c\n", 'k');
+printf("%d\n", res);
+rp = printf("%7c\n", 'k');
+printf("%d\n", rp);
 
 
-// res = ft_printf("%%-d 42 == %-d ", INT_MIN);
-// printf("%d\n", res);
-// rp = printf("%%-d 42 == %-d " , INT_MIN);
-// printf("%d\n", rp);
+res = ft_printf("%%-d 42 == %-d ", INT_MIN);
+printf("%d\n", res);
+rp = printf("%%-d 42 == %-d " , INT_MIN);
+printf("%d\n", rp);
 
 
 // res = ft_printf("%07u\n", 1234);
@@ -148,10 +148,10 @@ printf("%d\n", rp);
 // rp = printf("%07X\n", 1234);
 // printf("%d\n", rp);
 
-// res = ft_printf("%% *.5i 42 == |%*.5i|", 4, 42);
-// printf("%d\n", res);
-// rp = printf("%% *.5i 42 == |%*.5i|", 4, 42);
-// printf("%d\n", rp);
+res = ft_printf("%% *.5i 42 == |%*.5i|", 4, 42);
+printf("%d\n", res);
+rp = printf("%% *.5i 42 == |%*.5i|", 4, 42);
+printf("%d\n", rp);
 
 
 

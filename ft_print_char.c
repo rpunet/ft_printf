@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/06 01:15:48 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/11 04:14:46 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 21:14:26 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	char_convert(t_struct *s, va_list ap)
 			if (s->zero == 1)
 				s->ret += write(1, "0", 1);
 			else if (s->zero == 0)
-			s->ret += write(1, " ", 1);
+				s->ret += write(1, " ", 1);
 		}
 	}
 	s->ret += write(1, &a, 1);
@@ -40,8 +40,8 @@ void	char_convert(t_struct *s, va_list ap)
 	}
 }
 
- void	percent_convert(t_struct *s)
- {
+void	percent_convert(t_struct *s)
+{
 	if (s->neg == 0)
 	{
 		while (s->width-- > 1)
@@ -49,7 +49,7 @@ void	char_convert(t_struct *s, va_list ap)
 			if (s->zero == 1)
 				s->ret += write(1, "0", 1);
 			else if (s->zero == 0)
-			s->ret += write(1, " ", 1);
+				s->ret += write(1, " ", 1);
 		}
 	}
 	s->ret += write(1, "%", 1);

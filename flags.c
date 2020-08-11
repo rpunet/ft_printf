@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 22:48:54 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/06 05:22:00 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 21:13:33 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_precision(t_struct *s, char *format, va_list ap)
 			s->precision = 0;
 		else if (format[s->pos] >= '0' && format[s->pos] <= '9')
 		{
-			s->starp = 1;;
+			s->starp = 1;
 			while (format[s->pos] >= '0' && format[s->pos] <= '9')
 			{
 				s->precision = s->precision * 10 + format[s->pos] - '0';
