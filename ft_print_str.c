@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/06 04:31:36 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/06 04:57:31 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 21:04:17 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,44 @@
 
 void	ft_right_aligned_s(t_struct *s, int slen)
 {
+	char	c;
+
+	if (s->zero == 0)
+		c = ' ';
+	else
+		c = '0';
 	{
 		if (s->dot == 1 && s->precision < slen)
 		{
 			while (s->width-- > s->precision)
-				s->ret += write(1, " ", 1);
+				s->ret += write(1, &c, 1);
 		}
 		else
 		{
 			while (s->width-- > slen)
-				s->ret += write(1, " ", 1);
+				s->ret += write(1, &c, 1);
 		}
 	}
 }
 
 void	ft_left_aligned_s(t_struct *s, int slen)
 {
+	char	c;
+
+	if (s->zero == 0)
+		c = ' ';
+	else
+		c = '0';
 	{
 		if (s->dot == 1 && s->precision < slen)
 		{
 			while (s->width-- > s->precision)
-				s->ret += write(1, " ", 1);
+				s->ret += write(1, &c, 1);
 		}
 		else
 		{
 			while (s->width-- > slen)
-				s->ret += write(1, " ", 1);
+				s->ret += write(1, &c, 1);
 		}
 	}
 }

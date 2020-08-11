@@ -81,11 +81,11 @@ int		main(void)
 // rp = printf("%-3.8s", NULL);
 // printf("%d\n", rp);
 
-// res = ft_printf("%09s", "hi low\0don't print me lol\0");
-// printf("%d\n", res);
+res = ft_printf("%09s", "hi low\0don't print me lol\0");
+printf("%d\n", res);
 
-// rp = printf("%09s", "hi low\0don't print me lol\0");
-// printf("%d\n", rp);
+rp = printf("%09s", "hi low\0don't print me lol\0");
+printf("%d\n", rp);
 
 // res = ft_printf("resultado ft_printf:%.*p\n", -1,NULL);
 // printf("%d\n", res);
@@ -143,10 +143,15 @@ int		main(void)
 // printf("%d\n", rp);
 
 
-res = ft_printf("%07X\n", 1234);
-printf("%d\n", res);
-rp = printf("%07X\n", 1234);
-printf("%d\n", rp);
+// res = ft_printf("%07X\n", 1234);
+// printf("%d\n", res);
+// rp = printf("%07X\n", 1234);
+// printf("%d\n", rp);
+
+// res = ft_printf("%% *.5i 42 == |%*.5i|", 4, 42);
+// printf("%d\n", res);
+// rp = printf("%% *.5i 42 == |%*.5i|", 4, 42);
+// printf("%d\n", rp);
 
 
 
