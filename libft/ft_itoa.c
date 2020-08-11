@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 10:18:15 by rpunet            #+#    #+#             */
-/*   Updated: 2020/07/13 19:22:41 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 04:53:48 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ static int	ft_dec_count(unsigned int ncpy, int lng)
 	return (lng);
 }
 
-char		*ft_itoa(int n)
+char		*ft_itoa(long int n)
 {
-	unsigned int	nbr;
+	long int	nbr;
 	int				len;
 	char			*itoa;
 	int				sign;
 
 	sign = (n < 0) ? 1 : 0;
-	nbr = (n < 0) ? (unsigned int)-n : (unsigned int)n;
+	nbr = (n < 0) ? -n : n;
 	len = ft_dec_count(nbr, 1);
 	len += sign;
 	if (!(itoa = (char *)malloc(sizeof(char) * (len + 1))))

@@ -2,6 +2,7 @@
 #include "ft_printf.h"
 
 #include <stdio.h>
+#include <limits.h>
 
 
 int		main(void)
@@ -104,29 +105,29 @@ int		main(void)
 // printf("%d\n", rp);
 
 
-res = ft_printf("%-07c\n", 'k');
+// res = ft_printf("%-07c\n", 'k');
+// printf("%d\n", res);
+// rp = printf("%-07c\n", 'k');
+// printf("%d\n", rp);
+
+
+// res = ft_printf("%07c\n", 'k');
+// printf("%d\n", res);
+// rp = printf("%07c\n", 'k');
+// printf("%d\n", rp);
+
+
+
+
+// res = ft_printf("%7c\n", 'k');
+// printf("%d\n", res);
+// rp = printf("%7c\n", 'k');
+// printf("%d\n", rp);
+
+
+res = ft_printf("%%-d 42 == %-d ", INT_MIN);
 printf("%d\n", res);
-rp = printf("%-07c\n", 'k');
-printf("%d\n", rp);
-
-
-res = ft_printf("%07c\n", 'k');
-printf("%d\n", res);
-rp = printf("%07c\n", 'k');
-printf("%d\n", rp);
-
-
-
-
-res = ft_printf("%7c\n", 'k');
-printf("%d\n", res);
-rp = printf("%7c\n", 'k');
-printf("%d\n", rp);
-
-
-res = ft_printf("%7%\n");
-printf("%d\n", res);
-rp = printf("%7%\n");
+rp = printf("%%-d 42 == %-d " , INT_MIN);
 printf("%d\n", rp);
 
 	return (0);

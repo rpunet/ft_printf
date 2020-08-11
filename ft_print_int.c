@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 20:19:05 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/06 04:24:42 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 04:48:45 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,11 @@ void	ft_right_aligned_int(t_struct *s, int slen)
 
 void	int_convert(t_struct *s, va_list ap)
 {
-	int		num;
+	long	num;
 	char	*str;
 	int		slen;
 
-	num = va_arg(ap, int);
+	num = (long)va_arg(ap, int);
 	if (num < 0)
 	{
 		s->sign = 1;
