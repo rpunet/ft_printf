@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 21:40:59 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/11 01:26:47 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 02:12:20 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ void	left_aligned_ptr(t_struct *s, char *str, int plen)
 	int	pprecision;
 
 	pprecision = s->precision;
+	if ((*str == 48 && plen == 0 && pprecision == 0 && s->dot == 0))
+		plen = 1;
 	s->ret += write(1, "0x", 2);
 	while (s->precision-- > plen)
 		s->ret += write(1, "0", 1);
-	if (!(*str == 48 && plen == 1 && pprecision == 0))
+	if (!(*str == 48 && plen == 1 && pprecision == 0 && s->dot == 1))
 		s->ret += write(1, str, plen);
 	if (pprecision >= plen)
 	{
@@ -39,6 +41,8 @@ void	right_aligned_ptr(t_struct *s, char *str, int plen)
 	int pprecision;
 
 	pprecision = s->precision;
+	if ((*str == 48 && plen == 0 && pprecision == 0 && s->dot == 0))
+		plen = 1;
 	if (s->precision >= plen)
 	{
 		while (s->width-- > (s->precision + 2))
@@ -57,8 +61,7 @@ void	right_aligned_ptr(t_struct *s, char *str, int plen)
 	s->ret += write(1, "0x", 2);
 	while (s->precision-- > plen)
 		s->ret += write(1, "0", 1);
-	if (!(*str == 48 && plen == 1 && pprecision == 0))
-		s->ret += write(1, str, plen);
+	s->ret += write(1, str, plen);
 }
 
 void	ptr_convert(t_struct *s, va_list ap)
@@ -69,7 +72,10 @@ void	ptr_convert(t_struct *s, va_list ap)
 
 	ptr = va_arg(ap, char *);
 	str = ft_itoa_base((unsigned long)ptr, "0123456789abcdef\0");
-	plen = (int)ft_strlen(str);
+	if (ptr == NULL)
+		plen = 0;
+	else
+		plen = (int)ft_strlen(str);
 	if (s->dot == 1)
 		s->zero = 0;
 	if (s->neg == 1)
