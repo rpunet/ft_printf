@@ -86,26 +86,48 @@ int		main(void)
 // rp = printf("%09s", "hi low\0don't print me lol\0");
 // printf("%d\n", rp);
 
-res = ft_printf("resultado ft_printf:%.*p\n", -3,NULL);
-printf("%d\n", res);
+// res = ft_printf("resultado ft_printf:%.*p\n", -1,NULL);
+// printf("%d\n", res);
+// rp = printf("resultado  original:%.*p\n",-1, NULL);
+// printf("%d\n", rp);
 
-rp = printf("resultado  original:%.*p\n",-3, NULL);
+
+// res = ft_printf("%.*p\n", -1, NULL);
+// printf("%d\n", res);
+// rp = printf("%.*p\n", -1, NULL);
+// printf("%d\n", rp);
+
+
+// res = ft_printf("%14.*p\n", 0, s);
+// printf("%d\n", res);
+// rp = printf("%14.*p\n", 0, s);
+// printf("%d\n", rp);
+
+
+res = ft_printf("%-07c\n", 'k');
+printf("%d\n", res);
+rp = printf("%-07c\n", 'k');
 printf("%d\n", rp);
 
 
-res = ft_printf("%.*p\n", -3, NULL);
+res = ft_printf("%07c\n", 'k');
 printf("%d\n", res);
-
-rp = printf("%.*p\n", -3, NULL);
+rp = printf("%07c\n", 'k');
 printf("%d\n", rp);
 
 
-res = ft_printf("%14.*p\n", 0, s);
-printf("%d\n", res);
 
-rp = printf("%14.*p\n", 0, s);
+
+res = ft_printf("%7c\n", 'k');
+printf("%d\n", res);
+rp = printf("%7c\n", 'k');
 printf("%d\n", rp);
 
+
+res = ft_printf("%7%\n");
+printf("%d\n", res);
+rp = printf("%7%\n");
+printf("%d\n", rp);
 
 	return (0);
 }

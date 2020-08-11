@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 12:32:20 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/11 00:21:07 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/11 04:17:09 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct		s_struct
 int		ft_printf(char *format, ...) __attribute__ ((format (printf,1,2)));
 void	ft_tracker(t_struct *flags, va_list ap, char *format);
 void	char_convert(t_struct *s, va_list ap);
+ void	percent_convert(t_struct *s);
 void	int_convert(t_struct *s, va_list ap);
 void	ft_left_aligned_int(t_struct *s, char *str, int slen);
 void	ft_right_aligned_int(t_struct *s, int slen);
