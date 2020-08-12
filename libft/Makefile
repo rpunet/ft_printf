@@ -6,7 +6,7 @@
 #    By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/05 21:22:26 by rpunet            #+#    #+#              #
-#    Updated: 2020/07/18 04:21:50 by rpunet           ###   ########.fr        #
+#    Updated: 2020/08/12 19:51:37 by rpunet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,18 +23,21 @@ OBJS2	= $(SRCS2:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(SRCS) $(HDIR)
-	ar rcs $(NAME) $(OBJS)
+	@$(CC) $(CFLAGS) -c $(SRCS) $(HDIR)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "\033[1;32m ---- libft.a done! ---- \033[0m"
 
 norme: $(NORME) $(SRCS) $(SRCS2)
 
 
 
 clean:
-	rm -f $(OBJS) $(OBJS2)
+	@rm -f $(OBJS) $(OBJS2)
+	@echo "\033[1;31m ---- objects removed! ---- \033[0m"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "\033[1;31m ---- all cleared! ---- \033[0m"
 
 re: fclean all
 

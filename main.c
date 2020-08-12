@@ -9,153 +9,132 @@ int		main(void)
 {
 	int		res;
 	int		rp;
-	//char	*s = "hola";
+	char	*s = "hola";
 
 
-	//printf("hola, %s el numero %d\n", "yo soy", 3);
-	// if (!(res = ft_printf("soy %d, y  %d, %s, %d  %d\n", 523451, 36, "aquitepillo\n", 4, 34)))
-	// 	printf("error de especificador\n");
+res = ft_printf("\033[1;34mhola amigos\ncomo estais\033[0m\n");
+rp = printf("\033[1;32mhola amigos\ncomo estais\033[0m\n");
+printf("%d, %d\n\n", res, rp);
 
-	// printf("%d %i", res, 5*4 );
-	// //printf("el numero %+*.5d mola", 8, -123);
-
-
-
-	// res = ft_printf("hola amigos\ncomo estais\n""que\n");
-	// rp = printf("hola amigos\ncomo estais\n""que""bueno\n");
-	// printf("%d, %d\n", res, rp);
-/*
-	res = ft_printf("%-c\n", 'q');
-	rp = printf("%c\n", 'q');
-	printf("%d, %d\n", res, rp);
+res = ft_printf("\033[1;34m%-c\n\033[0m", 'q');
+rp = printf("\033[1;32m%c\n\033[0m", 'q');
+printf("%d, %d\n\n", res, rp);
 
 
-	res = ft_printf("%d\n", 1234);
-	rp = printf("%*.d\n" "mas frase",-12, 1040);
-	printf("%d, %d\n", res, rp);
+res = ft_printf("\033[1;34m%.15s\033[0m", "que frase!\n");
+rp = printf("\033[1;32m%.15s\033[0m", "que frase!\n");
+printf("%d, %d\n\n", res, rp);
 
 
 
-	res = ft_printf("%s", "que frase!\n");
-	rp = printf("%.15s", "que frase!\n");
-	printf("%d, %d\n", res, rp);
-
- */
-
-//printf("%i\n", '8' - '0');
-
-// res = ft_printf("%0*d\n %d\n",5,126, 127);
-// printf("%d\n", res);
-
-// rp = printf("%0*d\n %d\n",5,126, 127);
-// printf("%d\n", rp);
-
-// res = ft_printf("this %i number", 17);
-// printf("%d\n", res);
-
-// rp = printf("this %i number", 17);
-// printf("%d\n", rp);
-
-// res = ft_printf("%.d", 0);
-// printf("%d\n", res);
-
-// rp = printf("%.d", 0);
-// printf("%d\n", rp);
-
-
-//printf("%23i", 1234);
-
-
-
-
-
-res = ft_printf("%0*c\n", 5,66);
+res = ft_printf("\033[1;34m%0*d\n %d\n\033[0m",5,126, 127);
 printf("%d\n", res);
-
-rp = printf("%0*c\n", 5, 66);
-printf("%d\n", rp);
-
-// res = ft_printf("%-3.8s", NULL);
-// printf("%d\n", res);
-
-// rp = printf("%-3.8s", NULL);
-// printf("%d\n", rp);
-
-// res = ft_printf("%09s", "hi low\0don't print me lol\0");
-// printf("%d\n", res);
-
-// rp = printf("%09s", "hi low\0don't print me lol\0");
-// printf("%d\n", rp);
-
-// res = ft_printf("resultado ft_printf:%.*p\n", -1,NULL);
-// printf("%d\n", res);
-// rp = printf("resultado  original:%.*p\n",-1, NULL);
-// printf("%d\n", rp);
+rp = printf("\033[1;32m%0*d\n %d\n\033[0m",5,126, 127);
+printf("%d\n\n", rp);
 
 
-// res = ft_printf("%.*p\n", -1, NULL);
-// printf("%d\n", res);
-// rp = printf("%.*p\n", -1, NULL);
-// printf("%d\n", rp);
-
-
-// res = ft_printf("%14.*p\n", 0, s);
-// printf("%d\n", res);
-// rp = printf("%14.*p\n", 0, s);
-// printf("%d\n", rp);
-
-
-res = ft_printf("%-07c\n", 'k');
+res = ft_printf("\033[1;34mthis %i number\033[0m", 17);
 printf("%d\n", res);
-rp = printf("%-07c\n", 'k');
+rp = printf("\033[1;32mthis %i number\033[0m", 17);
+printf("%d\n\n", rp);
+
+
+res = ft_printf("\033[1;34m%.d\033[0m", 0);
+printf("%d\n", res);
+rp = printf("\033[1;32m%.d\033[0m", 0);
 printf("%d\n", rp);
 
 
-res = ft_printf("%07c\n", 'k');
+res = ft_printf("\033[1;34m%0*c\n\033[0m", 5,66);
 printf("%d\n", res);
-rp = printf("%07c\n", 'k');
+rp = printf("\033[1;32m%0*c\n\033[0m", 5, 66);
+printf("%d\n\n", rp);
+
+
+res = ft_printf("\033[1;34m%-3.8s\033[0m", NULL);
+printf("%d\n", res);
+rp = printf("\033[1;32m%-3.8s\033[0m", NULL);
+printf("%d\n\n", rp);
+
+
+res = ft_printf("\033[1;34m%09s", "hi low\0don't print me lol\0\033[0m");
+printf("%d\n", res);
+rp = printf("\033[1;32m%09s", "hi low\0don't print me lol\0\033[0m");
+printf("%d\n\n", rp);
+
+
+res = ft_printf("\033[1;34mresultado ft_printf:%.*p\n\033[0m", -1,NULL);
+printf("%d\n", res);
+rp = printf("\033[1;32mresultado  original:%.*p\n\033[0m",-1, NULL);
+printf("%d\n\n", rp);
+
+
+res = ft_printf("\033[1;34m%.*p\n\033[0m", -1, NULL);
+printf("%d\n", res);
+rp = printf("\033[1;32m%.*p\n\033[0m", -1, NULL);
+printf("%d\n\n", rp);
+
+
+res = ft_printf("\033[1;34m%14.*p\n\033[0m", 0, s);
+printf("%d\n", res);
+rp = printf("\033[1;32m%14.*p\n\033[0m", 0, s);
+printf("%d\n\n", rp);
+
+
+res = ft_printf("\033[1;34m%-07c\n\033[0m", 'k');
+printf("%d\n", res);
+rp = printf("\033[1;32m%-07c\n\033[0m", 'k');
+printf("%d\n\n", rp);
+
+
+res = ft_printf("\033[1;34m%07c\n\033[0m", 'k');
+printf("%d\n", res);
+rp = printf("\033[1;32m%07c\n\033[0m", 'k');
 printf("%d\n", rp);
 
 
-
-
-res = ft_printf("%7c\n", 'k');
+res = ft_printf("\033[1;34m%7c\n\033[0m", 'k');
 printf("%d\n", res);
-rp = printf("%7c\n", 'k');
-printf("%d\n", rp);
+rp = printf("\033[1;32m%7c\n\033[0m", 'k');
+printf("%d\n\n", rp);
 
 
-res = ft_printf("%%-d 42 == %-d ", INT_MIN);
+res = ft_printf("\033[1;34m%%-d 42 == %-d \033[0m", INT_MIN);
 printf("%d\n", res);
-rp = printf("%%-d 42 == %-d " , INT_MIN);
-printf("%d\n", rp);
+rp = printf("\033[1;32m%%-d 42 == %-d \033[0m" , INT_MIN);
+printf("%d\n\n", rp);
 
 
-// res = ft_printf("%07u\n", 1234);
-// printf("%d\n", res);
-// rp = printf("%07u\n", 1234);
-// printf("%d\n", rp);
-
-
-// res = ft_printf("this %u number", 17);
-// printf("%d\n", res);
-// rp = printf("this %u number", 17);
-// printf("%d\n", rp);
-
-
-// res = ft_printf("%07X\n", 1234);
-// printf("%d\n", res);
-// rp = printf("%07X\n", 1234);
-// printf("%d\n", rp);
-
-res = ft_printf("%% *.5i 42 == |%*.5i|", 4, 42);
+res = ft_printf("\033[1;34m%07u\n\033[0m", 1234);
 printf("%d\n", res);
-rp = printf("%% *.5i 42 == |%*.5i|", 4, 42);
-printf("%d\n", rp);
+rp = printf("\033[1;32m%07u\n\033[0m", 1234);
+printf("%d\n\n", rp);
 
 
+res = ft_printf("\033[1;34mthis %u number\033[0m", 17);
+printf("%d\n", res);
+rp = printf("\033[1;32mthis %u number\033[0m", 17);
+printf("%d\n\n", rp);
 
+res = ft_printf("\033[1;34m%07X\n\033[0m", 1234);
+printf("%d\n", res);
+rp = printf("\033[1;32m%07X\n\033[0m", 1234);
+printf("%d\n\n", rp);
 
+res = ft_printf("\033[1;34m%07X\n\033[0m", -543);
+printf("%d\n", res);
+rp = printf("\033[1;32m%07X\n\033[0m", -543);
+printf("%d\n\n", rp);
+
+res = ft_printf("\033[1;34m%3x\n\033[0m", 4567);
+printf("%d\n", res);
+rp = printf("\033[1;32m%3x\n\033[0m", 4567);
+printf("%d\n\n", rp);
+
+res = ft_printf("\033[1;34m%% *.5i 42 == |%*.5i|\033[0m", 4, 42);
+printf("%d\n", res);
+rp = printf("\033[1;32m%% *.5i 42 == |%*.5i|\033[0m", 4, 42);
+printf("%d\n\n", rp);
 
 	return (0);
 }

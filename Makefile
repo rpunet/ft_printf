@@ -6,7 +6,7 @@
 #    By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/16 18:07:10 by rpunet            #+#    #+#              #
-#    Updated: 2020/08/12 17:15:18 by rpunet           ###   ########.fr        #
+#    Updated: 2020/08/12 19:51:14 by rpunet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,20 +21,23 @@ OBJS	= $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	make -C $(LIB_DIR)
-	cp $(LIB_DIR)$(LIBFT) ./$(NAME)
-	$(CC) $(CFLAGS) -c $(SRCS)
+	@make -C $(LIB_DIR)
+	@cp $(LIB_DIR)$(LIBFT) ./$(NAME)
+	@$(CC) $(CFLAGS) -c $(SRCS)
 
-	ar rcs $(NAME) $(OBJS)
-	@echo libftprint.a done!
+	@ar rcs $(NAME) $(OBJS)
+	@echo "\033[1;32m ---- libftprint.a done! ---- \033[0m"
 
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@make clean -C $(LIB_DIR)
+	@echo "\033[1;31m ---- objects removed! ---- \033[0m"
 
 fclean: clean
-	rm -f $(NAME)
-	@echo all cleared!
+	@rm -f $(NAME)
+	@make fclean -C $(LIB_DIR)
+	@echo "\033[1;31m ---- all cleared! ---- \033[0m"
 
 re: fclean all
 
