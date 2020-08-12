@@ -6,7 +6,7 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 10:18:15 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/11 04:53:48 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/12 17:37:20 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_dec_count(unsigned int ncpy, int lng)
 
 char		*ft_itoa(long int n)
 {
-	long int	nbr;
+	long int		nbr;
 	int				len;
 	char			*itoa;
 	int				sign;
