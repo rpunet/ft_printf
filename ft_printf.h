@@ -6,67 +6,67 @@
 /*   By: rpunet <rpunet@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 12:32:20 by rpunet            #+#    #+#             */
-/*   Updated: 2020/08/11 20:26:41 by rpunet           ###   ########.fr       */
+/*   Updated: 2020/08/12 11:20:56 by rpunet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
-#include "./libft/libft.h"
+# ifndef PARAMETERS
+#  define CONVERSIONS	"cspdiuxX%"
+#  define NUMBERS		"0123456789"
+#  define FLAGS			"-0.*"
+#  define ALL			"cspdiuxX%-0.*123456789"
+# endif
 
-# define CONVERSIONS	"cspdiuxX%"
-# define NUMBERS		"0123456789"
-# define FLAGS			"-0.*"
-# define ALL			"cspdiuxX%-0.*123456789"
+# include <stdarg.h>
+# include "./libft/libft.h"
 
-// # define NEGATIVE		1
-
-typedef struct		s_struct
+typedef struct	s_struct
 {
 	int	pos;
-	int neg;
-	int zero;
-	int dot;
+	int	neg;
+	int	zero;
+	int	dot;
 	int	precision;
 	int	width;
-	int err;
-	int ret;
-	int star;
-	int starp;
-	int sign;
-	//int stop;
-}					t_struct;
+	int	err;
+	int	ret;
+	int	star;
+	int	starp;
+	int	sign;
+}				t_struct;
 
-int		ft_printf(char *format, ...) __attribute__ ((format (printf,1,2)));
-void	ft_tracker(t_struct *flags, va_list ap, char *format);
-void	char_convert(t_struct *s, va_list ap);
- void	percent_convert(t_struct *s);
-void	int_convert(t_struct *s, va_list ap);
-void	ft_left_aligned_int(t_struct *s, char *str, int slen);
-void	ft_right_aligned_int(t_struct *s, int slen);
-void	ft_aux_zeros(t_struct *s, char *str, int slen);
-void	str_convert(t_struct *s, va_list ap);
-void	ft_right_aligned_s(t_struct *s, int slen);
-void	ft_left_aligned_s(t_struct *s, int slen);
-void	ptr_convert(t_struct *s, va_list ap);
-void	right_aligned_ptr(t_struct *s, char *str, int plen);
-void	left_aligned_ptr(t_struct *s, char *str, int plen);
-void	udec_int_convert(t_struct *s, va_list ap);
-void	ft_right_aligned_udec_int(t_struct *s, char *str, int slen);
-void	ft_left_aligned_udec_int(t_struct *s, char *str, int slen);
-void	hex_convert(t_struct *s, va_list ap, char *format);
-void	ft_right_aligned_hex(t_struct *s ,char *str, int slen);
-void	ft_left_aligned_hex(t_struct *s, char *str, int slen);
-void	ft_check_flags(t_struct *s, va_list ap, char *format);
-void	ft_flags(t_struct *s, char *format);
-void	ft_width(t_struct *s, char *format, va_list ap);
-void	ft_precision(t_struct *s, char *format, va_list ap);
-void	ft_check_flags(t_struct *s, va_list ap, char *format);
-void	ft_struct_init(t_struct *s);
-void	ft_struct_zero(t_struct *s);
-char*	ft_itoa_base(unsigned long nbr, char *base);
-
+int				ft_printf(const char *format, ...)
+__attribute__ ((format (printf,1,2)));
+void			ft_format_read(t_struct *s, va_list ap, char *format);
+void			ft_tracker(t_struct *flags, va_list ap, char *format);
+void			char_convert(t_struct *s, va_list ap);
+void			percent_convert(t_struct *s);
+void			int_convert(t_struct *s, va_list ap);
+void			ft_left_aligned_int(t_struct *s, char *str, int slen);
+void			ft_right_aligned_int(t_struct *s, int slen);
+void			ft_aux_zeros(t_struct *s, char *str, int slen);
+void			str_convert(t_struct *s, va_list ap);
+void			ft_right_aligned_s(t_struct *s, int slen);
+void			ft_left_aligned_s(t_struct *s, int slen);
+void			ptr_convert(t_struct *s, va_list ap);
+void			right_aligned_ptr(t_struct *s, char *str, int plen);
+void			left_aligned_ptr(t_struct *s, char *str, int plen);
+void			udec_int_convert(t_struct *s, va_list ap);
+void			ft_right_aligned_udec_int(t_struct *s, char *str, int slen);
+void			ft_left_aligned_udec_int(t_struct *s, char *str, int slen);
+void			hex_convert(t_struct *s, va_list ap, char *format);
+void			ft_right_aligned_hex(t_struct *s, char *str, int slen);
+void			ft_left_aligned_hex(t_struct *s, char *str, int slen);
+void			ft_check_flags(t_struct *s, va_list ap, char *format);
+void			ft_flags(t_struct *s, char *format);
+void			ft_width(t_struct *s, char *format, va_list ap);
+void			ft_precision(t_struct *s, char *format, va_list ap);
+void			ft_check_flags(t_struct *s, va_list ap, char *format);
+void			ft_struct_init(t_struct *s);
+void			ft_struct_zero(t_struct *s);
+char			*ft_itoa_base(unsigned long nbr, char *base);
 
 #endif
